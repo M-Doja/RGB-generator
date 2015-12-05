@@ -1,0 +1,17 @@
+#colorSq {
+  height: 250px;
+  width: 250px;
+  display: block;
+  /*float: left;*/
+}
+#smSq {
+  height: 25px;
+  width: 25px;
+  /*display: inline;
+  list-style-type: none;*/
+}
+#inside li {
+  display: inline-block;
+  list-style-type: none;
+
+}
