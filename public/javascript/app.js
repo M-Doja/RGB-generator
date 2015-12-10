@@ -4,10 +4,19 @@
 	.config(Config);
 	Config.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function Config($stateProvider, $urlRouterProvider) {
-		$stateProvider.state('Home',{
-			url: '/',
-			templateUrl: 'views/home.html'
-		});
+		$stateProvider
+			.state('Home',{
+				url: '/',
+				templateUrl: 'views/home.html'
+			})
+			.state('Login',{
+				url: '/login',
+				templateUrl: 'views/Login.html'
+			})
+			.state('Profile',{
+				url: '/profile/:id',
+				templateUrl: 'views/Profile.html'
+			});
 		$urlRouterProvider.otherwise('/');
 	}
 })();

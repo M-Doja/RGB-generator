@@ -1,27 +1,13 @@
-<div ng-controller="HomeController as vm">
+ <div ng-controller="HomeController as vm">
 	<h1 style="text-align:center">{{vm.title}}</h1>
 
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="nav nav-tabs">
-					<li class="active">
-						<a href="#">Sign-in</a>
-					</li>
-					<!-- <li>
-						<a href="#">Profile</a>
-					</li>
-					<li class="disabled">
-						<a href="#">Messages</a>
-					</li> -->
-				</ul>
-			</div>
-		</div>
+
 		<div class="row">
 			<div class="col-md-4" style="text-align:center"><br><br>
-				<button class="btn btn-primary btn-sm"ng-click="vm.startColor()" >Generate Color</button>
-				<button type='button' class="btn btn-info btn-sm" ng-click="vm.saveColor()">Save</button><br><br>
+				<button class="btn btn-primary btn-sm" ng-click="vm.generateColor()" >Generate Color</button>
+				<button type='button' class="btn btn-info btn-sm" ng-click="vm.saveColor()" >Save</button><br><br>
 				<div id='color-container'>
 
 				</div>
@@ -40,6 +26,8 @@
 			</div>
 
 
+
 		</div>
 	</div>
+</div>
 </div> <!-- End of controller -->
