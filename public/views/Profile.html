@@ -1,25 +1,33 @@
-<div class="row" ng-controller='ProfileController as vm'>
-  <div class="col-md-4" style="text-align:center"><br><br>
-    <h1>Welcome {{nav.user.name}}</h1>
-    <button class="btn btn-primary btn-sm"ng-click="vm.generateColor()" >Generate Color</button>
-    <button type='button' class="btn btn-info btn-sm" ng-click="vm.saveColor()">Save</button><br><br>
-    <div id='color-container'>
+<div ng-controller="ProfileController as vm">
+ <h1 style="text-align:center">{{vm.status.username}}'s {{vm.title}}</h1>
 
-    </div>
-  </div>
+ <button ng-click='vm.logOut()'>Log Out</button>
 
-  <div class="col-md-8 well" style="min-height:380px;margin-top:15px;">
-    <div>({{vm.counter}})<span> Favorites</span>
-    <div ng-hide='vm.signUpMsg'>
-      <p style="text-align:center;">Sign up to save your favorites for future projects.</p>
-    </div>
-    <div ng-show="vm.noColorMsg">
-      <h1 style="text-align:center;margin-top:100px;">You have no favorites saved</h1>
-    </div>
-    <ul id='inside'>
-    </ul>
-  </div>
+
+ <div class="container">
+
+   <div class="row">
+     <div class="col-md-4" style="text-align:center"><br><br>
+       <button class="btn btn-primary btn-sm" ng-click="vm.generateColor()" >Generate Color</button>
+       <button type='button' class="btn btn-info btn-sm" ng-click="vm.saveColor()" >Save</button><br><br>
+       <div id='color-container'>
+
+       </div>
+     </div>
+
+     <div class="col-md-8 well" style="min-height:380px;margin-top:15px;">
+       <div>({{vm.count}})<span> Favorites</span>
+
+       <div ng-show="vm.noColorMsg">
+         <h1 style="text-align:center;margin-top:100px;">You have no favorites saved</h1>
+       </div>
+       <ul id='inside'>
+       </ul>
+     </div>
+
+
+
+   </div>
+ </div>
 </div>
-
-
-</div>
+</div> <!-- End of controller -->

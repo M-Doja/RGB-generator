@@ -7,27 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.css">
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
-<body ng-controller"GlobalController as nav">
-	<div class="row">
-		<div class="col-md-12">
-			<ul class="nav nav-tabs">
-				<li class="active">
-					<a ui-sref="Login">Sign-in</a>
-				</li>
-				<li >
-					<a ui-sref="Home">Log-out</a>
-				</li>
-				<li>
-					<a href="#">Profile</a>
-				</li>
-				<!-- <li class="disabled">
-					<a href="#">Messages</a>
-				</li> -->
-			</ul>
-		</div>
-	</div>
+<body>
+
 	<ui-view></ui-view>
 	<!-- Ext Libs -->
+	<script src="/jquery/dist/jquery.min.js"></script>
 	<script src="angular/angular.min.js"></script>
 	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
 	<!-- Global Src -->
@@ -38,6 +22,6 @@
 	<!-- Controllers -->
 	<script src="/javascript/controllers/HomeController.js"></script>
 	<script src="/javascript/controllers/ProfileController.js"></script>
-	<script src="/javascript/controllers/GlobalController.js"></script>
+	<!-- <script src="/javascript/controllers/GlobalController.js"></script> -->
 </body>
 </html>

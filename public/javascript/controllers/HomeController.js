@@ -3,46 +3,40 @@
 	angular.module('app')
 	.controller('HomeController', HomeController);
 
-	function HomeController() {
+	function HomeController(Userfactory,$state) {
+		console.log('Home Controller');
 			// Global Variables
 		var vm = this;
 		vm.title = 'RGB Random Colors Library';
-		vm.red;
-		vm.green;
-		vm.blue;
-		vm.rgbColor;
-		vm.noColorMsg = true;
-		vm.signUpMsg = true;
-		vm.count = 0;
-		vm.username = false;
-		vm.favorites = [];
+		vm.status = Userfactory.status
+		vm.isLogin = true; //switch between the login and register view on the login_register.html page
+		vm.user = {};
 
-				// Generate and display a random RGB color
-		 vm.generateColor = function() {
-				function randomRGB() { return Math.floor(Math.random() * 256); }
-				for(var i = 0; i <=50; i +=1 ) {
-					vm.red = randomRGB();
-					vm.green = randomRGB();
-					vm.blue = randomRGB();
-					vm.rgbColor = 'rgb(' + vm.red + ',' + vm.green + ',' + vm.blue + ')';
-					document.getElementById('color-container').innerHTML = '<div id="colorSq"style="margin:0 auto;background-color:' + vm.rgbColor + '"></div><h3>RGB('+ vm.red + ',' + vm.green + ',' + vm.blue + ')</h3>';
-				}
-		}
-						// Save selected generated color to Arr and display message
-			vm.saveColor = function() {
-				vm.noColorMsg = false;
-				vm.signUpMsg = false;
-				vm.favorites = [];
-				if (!vm.rgbColor ) { vm.newColor = ''; }
-				else {
-					vm.newColor = vm.rgbColor;
-					vm.favorites.push(vm.newColor);
-					console.log(vm.newColor);
-					for (var i = 0; i < vm.favorites.length; i++) {
-						vm.count = 1;
-				document.getElementById('inside').innerHTML = '<li><div id="smSq"style="background-color:' + vm.favorites[i] + ';margin-left:125px;margin-bottom:-23px;margin-top:20px;margin-right:20px"></div><h5 >RGB('+ vm.red + ',' + vm.green + ',' + vm.blue + ')</h5></li>';
-					}
-				}
-			}
+		vm.registerUser = function() {
+				Userfactory.registerUser(vm.user).then(function() {
+					$state.go('Profile',{
+				    id: vm.status._id
+				  });
+				
+				});
+			};
+
+		vm.loginUser = function() {
+			console.log('hi');
+				Userfactory.logIn(vm.user).then(function() {
+				  console.log('hi world');
+				  $state.go('Profile', {
+				    id: vm.status._id
+				  });
+				});
+			};
+			vm.logOut = function() {
+						Userfactory.logOut();
+						$state.go('Home');
+					};
+
+
+
+
 	} // end of Home Ctrl
 })();

@@ -3,7 +3,8 @@
 	angular.module('app')
 	.controller('ProfileController', ProfileController);
 
-	function ProfileController() {
+	function ProfileController(Userfactory, $state, $stateParams) {
+		console.log('Profile Controller');
 		var vm = this;
 		vm.title = 'Personal RGB Color Library';
 		vm.red;
@@ -13,8 +14,14 @@
 		vm.noColorMsg = true;
 		vm.signUpMsg = true;
 		vm.counter = 0;
-		vm.username = false;
 		vm.favorites = [];
+		vm.status = Userfactory.status;
+
+	console.log(vm.status.username);
+		vm.logOut = function() {
+					Userfactory.logOut();
+					$state.go('Home');
+				};
 
 		 vm.generateColor = function() {
 				function randomRGB() {

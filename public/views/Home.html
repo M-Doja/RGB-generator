@@ -1,33 +1,90 @@
- <div ng-controller="HomeController as vm">
+ <div ng-controller="HomeController as nav">
 	<h1 style="text-align:center">{{vm.title}}</h1>
 
 
-	<div class="container">
+  <!-- <div ng-contoller='UserController as vm'> -->
 
-		<div class="row">
-			<div class="col-md-4" style="text-align:center"><br><br>
-				<button class="btn btn-primary btn-sm" ng-click="vm.generateColor()" >Generate Color</button>
-				<button type='button' class="btn btn-info btn-sm" ng-click="vm.saveColor()" >Save</button><br><br>
-				<div id='color-container'>
+<!--
+Allow for login and new user registration
+display add/or join family button that will
+IF join display list of family,once selected prompt password to join
+redirect to family profile
+If add then redirct to form to add family then redirect to family profile
+ -->
+ <div style="text-align:center;">
+   <!-- <h3>Family Stories</h3> -->
+ </div>
+ <br>
+ <div ng-show="nav.isLogin">
+   <form class="well container" ng-submit="nav.loginUser()">
+     <h1 style="color:red;text-align:center;font-family:Sans Serif">Sign In</h1>
+  <md-input-container>
+     <input class="form-control"  placeholder="Username..." ng-model="nav.user.username">
+  </md-input-container>
+    <md-input-container>
+     <input type="password" class="form-control"  placeholder="Password..." ng-model="nav.user.password">
+  </md-input-container>
+    <md-input-container>
+     <div style="text-align: center">
+       <button type='button' ng-click="nav.isLogin = false;" class="btn btn-info">Register</a>
+       <button type="submit" class="btn btn-primary" >Login</button><br><br>
+   </md-input-container>
+     </div>
+   </form>
+ </div>
 
-				</div>
-			</div>
-
-			<div class="col-md-8 well" style="min-height:380px;margin-top:15px;">
-				<div>({{vm.count}})<span> Favorites</span>
-				<div ng-hide='vm.signUpMsg'>
-					<p style="text-align:center;">Sign up to save your favorites for future projects.</p>
-				</div>
-				<div ng-show="vm.noColorMsg">
-					<h1 style="text-align:center;margin-top:100px;">You have no favorites saved</h1>
-				</div>
-				<ul id='inside'>
-				</ul>
-			</div>
+ <div ng-show="!nav.isLogin">
 
 
+   <form class="well container" style="text-align:center"ng-submit="nav.registerUser()">
+     <h1 style="text-align:center;color:red;">Registration</h1>
 
-		</div>
-	</div>
+     <md-content layout-padding class="autoScroll">
+    <md-input-container class="md-icon-float">
+      <!-- Use floating label instead of placeholder -->
+
+      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+      <input placeholder="Username..." ng-model="nav.user.username"  type="text">
+    </md-input-container><br>
+
+    <md-input-container >
+
+      <!-- Use floating placeholder instead of label -->
+      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+      <input ng-model="nav.user.email" type="email" placeholder="Email " >
+    </md-input-container><br>
+
+<md-input-container>
+
+     <input  type="password" placeholder="Password..." ng-model="nav.user.password" >
+   </md-input-container><br>
+
+ <md-input-container>
+
+     <input type="password" placeholder="Confirm Password..." ng-model="nav.user.confirmPassword" >
+   </md-input-container><br><br><br>
+
+   <button type='button' ng-click="nav.isLogin = true;" class="btn btn-warning">exit</a>
+ </md-content>
+
+
+
+     <div ng-show="nav.user.password && nav.user.confirmPassword && !(nav.user.password === nav.user.confirmPassword)" style="color: red">Your passwords must match.</div>
+
+     <div style="text-align:center">
+       <!-- <button type="button" ng-click="nav.isLogin = true;" class="btn btn-primary">Login</button> -->
+       <button style='margin-left:15px' type="submit" class="btn btn-info">Join!</button>
+     </div>
+
+
+   </form>
+ </div>
+
+
+
+
+
+
 </div>
+
 </div> <!-- End of controller -->

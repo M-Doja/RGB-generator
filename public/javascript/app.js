@@ -9,10 +9,6 @@
 				url: '/',
 				templateUrl: 'views/home.html'
 			})
-			.state('Login',{
-				url: '/login',
-				templateUrl: 'views/Login.html'
-			})
 			.state('Profile',{
 				url: '/profile/:id',
 				templateUrl: 'views/Profile.html'
