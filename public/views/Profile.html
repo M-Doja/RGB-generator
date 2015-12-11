@@ -8,6 +8,7 @@
 
    <div class="row">
      <div class="col-md-4" style="text-align:center"><br><br>
+       <button class="btn btn-primary btn-sm" ng-click="vm.newCollection()" >New Collection</button>
        <button class="btn btn-primary btn-sm" ng-click="vm.generateColor()" >Generate Color</button>
        <button type='button' class="btn btn-info btn-sm" ng-click="vm.saveColor()" >Save</button><br><br>
        <div id='color-container'>
@@ -16,7 +17,13 @@
      </div>
 
      <div class="col-md-8 well" style="min-height:380px;margin-top:15px;">
-       <div>({{vm.count}})<span> Favorites</span>
+       <div>({{vm.counter}})<span> Favorites</span>
+
+          <!-- INPUT FOR PALETTE NAME -->
+         <span style="float:right;">
+           <input type='text' ng-model='vm.palette.title' placeholder='Palette Title...'>
+           <md-button ng-click='vm.savePalettename()' class="btn-primary btn-sm">Save
+         </span>
 
        <div ng-show="vm.noColorMsg">
          <h1 style="text-align:center;margin-top:100px;">You have no favorites saved</h1>

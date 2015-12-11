@@ -47,7 +47,7 @@
 					vm.favorites.push(vm.newColor);
 					console.log(vm.newColor);
 					for (var i = 0; i < vm.favorites.length; i++) {
-						vm.count += 2;
+						vm.counter += 1;
 				document.getElementById('inside').innerHTML += '<li><div id="smSq"style="background-color:' + vm.favorites[i] + ';margin-left:125px;margin-bottom:-23px;margin-top:20px;margin-right:20px"></div><h5 >RGB('+ vm.red + ',' + vm.green + ',' + vm.blue + ')</h5></li>';
 
 					}
