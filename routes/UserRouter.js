@@ -44,6 +44,16 @@ router.post('/login',  function(req, res, next) {
   })(req, res, next);
 });
 
+// save new Color
+router.post('/', function(req, res, next) {
+  var palette = new Palette(req.body);
+  palette.color = req.payload.color;
+  exec(function(err, result) {
+    if(err) return next(err);
+    if(!result) return next(err);
+    res.send(result);
+  });
+});
 
 
 module.exports = router;

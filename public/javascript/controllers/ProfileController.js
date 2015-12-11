@@ -3,7 +3,7 @@
 	angular.module('app')
 	.controller('ProfileController', ProfileController);
 
-	function ProfileController(Userfactory, $state, $stateParams) {
+	function ProfileController(Userfactory,HomeFactory, $state, $stateParams) {
 		console.log('Profile Controller');
 		var vm = this;
 		vm.title = 'Personal RGB Color Library';
@@ -12,7 +12,7 @@
 		vm.blue;
 		vm.rgbColor;
 		vm.noColorMsg = true;
-		vm.signUpMsg = true;
+
 		vm.counter = 0;
 		vm.favorites = [];
 		vm.status = Userfactory.status;
@@ -37,8 +37,11 @@
 				}
 		}
 			vm.saveColor = function() {
+				console.log(vm.newColor);
+				HomeFactory.saveColor(vm.newColor).then(function(res) {
+					vm.newColor = res;
+				});
 				vm.noColorMsg = false;
-				vm.signUpMsg = false;
 				vm.favorites = [];
 				if (!vm.rgbColor ) {
 					vm.newColor = '';

@@ -1,13 +1,14 @@
 <div ng-controller="ProfileController as vm">
  <h1 style="text-align:center">{{vm.status.username}}'s {{vm.title}}</h1>
 
- <button ng-click='vm.logOut()'>Log Out</button>
+
 
 
  <div class="container">
 
    <div class="row">
      <div class="col-md-4" style="text-align:center"><br><br>
+       <button class="btn-danger"ng-click='vm.logOut()'>Log Out</button>
        <button class="btn btn-primary btn-sm" ng-click="vm.newCollection()" >New Collection</button>
        <button class="btn btn-primary btn-sm" ng-click="vm.generateColor()" >Generate Color</button>
        <button type='button' class="btn btn-info btn-sm" ng-click="vm.saveColor()" >Save</button><br><br>
