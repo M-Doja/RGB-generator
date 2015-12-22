@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	angular.module('app', ['ui.router'])
+	angular.module('app', ['ui.router',  'ngAnimate', 'ngMaterial'])
 	.config(Config);
 	Config.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function Config($stateProvider, $urlRouterProvider) {
@@ -12,6 +12,22 @@
 			.state('Profile',{
 				url: '/profile/:id',
 				templateUrl: 'views/Profile.html'
+			})
+			.state('EventPage',{
+				url: '/events',
+				templateUrl: 'views/EventPage.html'
+			})
+			 .state('EventHome',{
+				url: '/events_admin',
+				templateUrl: 'views/RunningEvent.html'
+			})
+				.state('Upgrade',{
+				url: '/upgrade',
+				templateUrl: 'views/Upgrade.html'
+			})
+				.state('Exit',{
+				url: '/exit_page',
+				templateUrl: 'views/ExitPage.html'
 			});
 		$urlRouterProvider.otherwise('/');
 	}

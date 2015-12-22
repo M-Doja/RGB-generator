@@ -28,7 +28,7 @@ router.post('/register', function(req, res, next) {
     if(err) return next(err);
     if(!result) return next("There was an issue registering that user.");
     console.log(result);
-    vm.user.username = result.username;
+    // req.status.username = result.username;
     res.send(result.createToken());
   });
 });

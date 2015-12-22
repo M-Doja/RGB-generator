@@ -4,9 +4,23 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/RGBlibrary');
+//------------------------------------------------
+// Connection to local database
+mongoose.connect('mongodb://localhost/shaker');
 
+// Connection to live database
+
+// mongoose.connect(process.env.MONGOLAB_URI, function(err) {
+//   if (err) {
+//     console.log(process.env.MONGOLAB_URI);
+//     return console.log("Error database");
+//   }
+//   console.log("Database Connected");
+// });
+
+//----------------------------------------------
 require('./models/User');
+require('./models/Event');
 require('./models/Palette');
 require('./config/passport');
 
@@ -26,13 +40,15 @@ app.set('view options', {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 var userRoutes = require('./routes/UserRouter');
+var eventRoutes = require('./routes/EventRouter');
 
 //on homepage load, render the index page
 app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.use('/api/user', userRoutes)
+app.use('/api/user', userRoutes);
+app.use('/api/event', eventRoutes);
 
 var server = app.listen(port, function() {
 	var host = server.address().address;
