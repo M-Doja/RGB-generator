@@ -3,7 +3,7 @@
 	angular.module('app')
 	.controller('ProfileController', ProfileController);
 
-	function ProfileController(Userfactory,HomeFactory, $state, $stateParams) {
+	function ProfileController(UserFactory,HomeFactory, $state, $stateParams) {
 		console.log('Profile Controller');
 		var vm = this;
 		vm.title = 'Personal RGB Color Library';
@@ -12,14 +12,13 @@
 		vm.blue;
 		vm.rgbColor;
 		vm.noColorMsg = true;
-
 		vm.counter = 0;
 		vm.favorites = [];
-		vm.status = Userfactory.status;
+		vm.status = UserFactory.status;
 
 	console.log(vm.status.username);
 		vm.logOut = function() {
-					Userfactory.logOut();
+					UserFactory.logOut();
 					$state.go('Home');
 				};
 
