@@ -2,6 +2,10 @@
 <div ng-controller='EventController as vm'>
 <button class="btn btn-lg btn-default" ui-sref='Dash' style="margin-top:10px;margin-left:15px;width:200px;height:60px;">Dashboard</button>
 <button class="btn btn-lg btn-default" ui-sref='AddEvent ' style="margin-top:10px;margin-left:15px;width:200px"><img style="padding-right:10px"height='30' src='http://www.wearewow.com/global/img/icon-intro-addevent.png'/>Add Event</button>
+<div id='clockDisplay' style="text-align:right;">
+  <p style="margin-right:105px;">Time Remaining:</p>
+  <div id='clock'style="width:200px;height:40px;background-color:white;border-radius:5%;float:right;margin-right:65px;"><p style="text-align:center;color:black;margin-top:1%;font-size:2em;font-weight:bold;">7:30</p></div>
+</div>
 <h1 style="text-align:center;margin-bottom:15px;">Running Event</h1>
   <div class="container-fluid">
   	<div class="row">
