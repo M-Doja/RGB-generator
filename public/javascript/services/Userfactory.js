@@ -1,8 +1,8 @@
 (function() {
   "use strict";
   angular.module('app')
-  .factory('Userfactory', Userfactory);
-  function Userfactory($http, $q) {
+  .factory('UserFactory', UserFactory);
+  function UserFactory($http, $q) {
     var o = {};
     o.status = {};
 
@@ -31,7 +31,7 @@
       return q.promise;
     };
 
-    
+
     o.logIn = function(user) {
       console.log("Second stop of DF journey");
       var q = $q.defer();

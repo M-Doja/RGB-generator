@@ -2,11 +2,9 @@ var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 var User = mongoose.model('User');
-var Palette = mongoose.model('Palette');
+// var Palette = mongoose.model('Palette');
 var jwt = require('express-jwt');
 var passport = require('passport');
-
-// this how server knows if user is legit or not
 var auth = jwt({
   secret: 'RGB_Fun',
   userProperty: 'payload'

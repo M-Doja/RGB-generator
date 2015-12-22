@@ -17,7 +17,7 @@
 					$state.go('Profile',{
 				    id: vm.status._id
 				  });
-				
+
 				});
 			};
 
