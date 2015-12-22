@@ -3,10 +3,10 @@
 	angular.module('app')
 	.controller('ProfileController', ProfileController);
 
-	function ProfileController(UserFactory,HomeFactory, $state, $stateParams) {
+	function ProfileController(UserFactory,HomeFactory, $state, $stateParams, $animate) {
 		console.log('Profile Controller');
 		var vm = this;
-		vm.title = 'Personal RGB Color Library';
+		vm.title = 'Profile';
 		vm.red;
 		vm.green;
 		vm.blue;
@@ -15,6 +15,50 @@
 		vm.counter = 0;
 		vm.favorites = [];
 		vm.status = UserFactory.status;
+		vm.isBio = false;
+		vm.isIns = true;
+		vm.isEve = true;
+		vm.isStat = true;
+		vm.isAch = true;
+		$animate.enabled(true);
+		vm.status = UserFactory.status
+
+
+		vm.showBio = function() {
+			vm.isBio = false;
+			vm.isIns = true;
+			vm.isEve = true;
+			vm.isStat = true;
+			vm.isAch = true;
+		}
+		vm.showIns = function() {
+			vm.isIns = false;
+			vm.isBio = true;
+			vm.isEve = true;
+			vm.isStat = true;
+			vm.isAch = true;
+		}
+		vm.showEve = function() {
+			vm.isBio = true;
+			vm.isIns = true;
+			vm.isEve = false;
+			vm.isStat = true;
+			vm.isAch = true;
+		}
+		vm.showStat = function() {
+			vm.isBio = true;
+			vm.isIns = true;
+			vm.isEve = true;
+			vm.isStat = false;
+			vm.isAch = true;
+		}
+		vm.showAch = function() {
+			vm.isBio = true;
+			vm.isIns = true;
+			vm.isEve = true;
+			vm.isStat = true;
+			vm.isAch = false;
+		}
 
 	console.log(vm.status.username);
 		vm.logOut = function() {

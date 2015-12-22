@@ -3,27 +3,30 @@
 
 
 
- <div style="text-align:center;">
-   <!-- <h3>Family Stories</h3> -->
- </div>
+
  <br>
  <div ng-show="nav.isLogin">
    <form class="well container" ng-submit="nav.loginUser()">
      <h1 style="color:red;text-align:center;font-family:Sans Serif">Sign In</h1>
-  <md-input-container>
-     <input class="form-control"  placeholder="Username..." ng-model="nav.user.username">
-  </md-input-container>
-    <md-input-container>
-     <input type="password" class="form-control"  placeholder="Password..." ng-model="nav.user.password">
-  </md-input-container>
+     <md-content  layout-gt-sm="row" layout-padding>
+         <div>
+           <md-input-container>
+             <input class="form-control"  placeholder="Username..." ng-model="nav.user.username">
+           </md-input-container>
+           <md-input-container>
+             <input type="password" class="form-control"  placeholder="Password..." ng-model="nav.user.password">
+           </md-input-container>
+         </div>
+       </md-content>
+
     <md-input-container>
      <div style="text-align: center">
-       <button type='button' ng-click="nav.isLogin = false;" class="btn btn-info">Register</a>
-       <button type="submit" class="btn btn-primary" >Login</button><br><br>
+       <md-button type="submit" class="btn btn-primary" >Login</md-button>
+       <md-button type='button' ng-click="nav.isLogin = false;" class="btn btn-info">Register</md-button><br><br>
    </md-input-container>
-     </div>
-   </form>
  </div>
+ </form>
+
 
  <div ng-show="!nav.isLogin">
 
@@ -77,6 +80,6 @@
 
 
 
-</div>
+<!-- </div> -->
 
 </div> <!-- End of controller -->

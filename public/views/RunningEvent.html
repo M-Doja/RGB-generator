@@ -1,15 +1,18 @@
 <!-- This page is used as the home page for the event admin -->
-<button class="btn btn-lg btn-default" ui-sref='Home' style="margin-top:10px;margin-left:15px;width:200px">Home</button>
 <div ng-controller='EventController as vm'>
+<button class="btn btn-lg btn-default" ui-sref='Dash' style="margin-top:10px;margin-left:15px;width:200px;height:60px;">Dashboard</button>
+<button class="btn btn-lg btn-default" ui-sref='AddEvent ' style="margin-top:10px;margin-left:15px;width:200px"><img style="padding-right:10px"height='30' src='http://www.wearewow.com/global/img/icon-intro-addevent.png'/>Add Event</button>
+<h1 style="text-align:center;margin-bottom:15px;">Running Event</h1>
   <div class="container-fluid">
   	<div class="row">
   		<div class="col-md-12">
   		</div>
       	</div>
         	<div class="row">
-        		<div class="col-md-5">
+        		<div class="col-md-5" style="border: 2px white solid;margin-top:5px;">
         			<table class="table table-bordered table-condensed">
-                <caption style="font-size:2em;">Now Playing</caption>
+                <caption style="font-size:1.5em;text-align:center;margin-top:-25px;margin-bottom:35px;">Now Playing: </caption>
+                <button class='btn btn-default' style="text-align:left;margin-right:25px;margin-top:10px;font-size:1.6em;border:2px solid;width:55px;padding:5px;">Edit</button>
         				<thead>
         					<tr>
         						<th>
@@ -86,9 +89,10 @@
         				</tbody>
         			</table>
         		</div>
-      		<div class="col-md-5">
+      		<div class="col-md-5" style="border: 2px white solid;margin-top:5px;">
             <table class="table table-bordered table-condensed">
-              <caption style="font-size:2em;">Up Next</caption>
+              <caption style="font-size:1.5em;text-align:center;margin-top:-25px;margin-bottom:35px;">Up Next: </caption>
+              <button class='btn btn-default' style="text-align:left;margin-right:25px;margin-top:10px;font-size:1.6em;border:2px solid;width:55px;padding:5px;">Edit</button>
               <thead>
                 <tr>
                   <th>
@@ -165,19 +169,25 @@
               </tbody>
             </table>
       		</div>
-      		<div style="text-align:center;"class="col-md-2">
 
-      			<button style="margin-bottom:15px;" type="button" class="btn btn-sm btn-default">
-      				Current Set Running Clock
+
+      		<div style="text-align:center;margin-top:25px;"class="col-md-2">
+
+      			<button style="margin-bottom:15px;height:37px;width:168px;" type="button" class="btn btn-sm btn-default"><img style="padding-right:10px;" height='20' src="http://www.iconsdb.com/icons/preview/white/clock-xxl.png"/>
+      				Set Running Clock
       			</button><br>
-      			<button style="margin-bottom:15px;"type="button" class="btn btn-sm btn-default">
-      				Play / Pause Current Timer
+      			<button style="margin-bottom:15px;width:168px;height:37px;"type="button" class="btn btn-sm btn-default">
+      				Play / Pause <img style="padding-left:10px;" height='20' src="https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/play-pause_button_play_pause-512.png"/>
       			</button><br>
       			<button style="width:168px;margin-bottom:15px;"type="button" class="btn btn-sm btn-default">
-      				Force Next Set
+      				Force Next Set<img style="padding-left:10px;" height='25' src="http://www.iconsplace.com/icons/preview/white/fast-forward-256.png"/>
       			</button><br>
-      			<button style="width:168px;"type="button" class="btn btn-sm btn-default">
+            <!-- http://www.iconsdb.com/icons/preview/white/rewind-xxl.png -->
+      			<button style="width:168px;margin-bottom:15px;height:37px;"type="button" class="btn btn-sm btn-default"><img style="padding-right:10px;" height='20' src="http://www.iconsdb.com/icons/preview/white/rewind-xxl.png"/>
       				Force Previous Set
+      			</button><br>
+            <button style="width:168px;"type="button" class="btn btn-lg btn-default"><img style="padding-right:10px;" height='30' src="http://www.iconsdb.com/icons/preview/white/settings-xxl.png"/>
+      				Settings
       			</button>
       		</div>
       	</div>
@@ -186,9 +196,7 @@
       		</div>
       		<div class="col-md-2">
 
-      			<button style="float:right;margin-right:13px;margin-top:-75px;width:168px;"type="button" class="btn btn-lg btn-default">
-      				Settings
-      			</button>
+
       		</div>
       	</div>
       </div>

@@ -9,9 +9,9 @@
 				url: '/',
 				templateUrl: 'views/home.html'
 			})
-			.state('Profile',{
-				url: '/profile/:id',
-				templateUrl: 'views/Profile.html'
+			.state('Dash',{
+				url: '/dash/:id',
+				templateUrl: 'views/Dash.html'
 			})
 			.state('EventPage',{
 				url: '/events',
@@ -28,6 +28,10 @@
 				.state('Exit',{
 				url: '/exit_page',
 				templateUrl: 'views/ExitPage.html'
+			})
+			.state('Profile',{
+			url: '/profile/:id',
+			templateUrl: 'views/Profile.html'
 			});
 		$urlRouterProvider.otherwise('/');
 	}

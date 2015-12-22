@@ -1,0 +1,20 @@
+<div ng-controller="DashController as vm">
+ <h1 style="text-align:center">{{vm.status.username}}'s {{vm.title2}}</h1>
+ <div  style="text-align:center;margin-top:20px;"class="row">
+    <div style="margin-bottom:15px;"class="col-md-4">
+      <a ui-sref='Profile({id: vm.status._id})' style="width:300px;height:200px;"><h3>Profile</h3><img height='225' src='https://dhrm.utah.gov/wp-content/themes/dhrm/img/icon-employeebadge-white-large.png'></a>
+    </div>
+    <div style="margin-bottom:15px;"class="col-md-4">
+      <a ui-sref='EventPage' style="width:300px;height:200px;"><h3>Event Calendar</h3><img height='225' src='http://orpheumbell.com/wp-content/uploads/2010/04/icon-calendar-white.png'></a>
+    </div>
+    <div class="col-md-4">
+      <a ui-sref='EventHome' style="width:300px;height:200px"><h3>Create/Run Event</h3><img height='225' src='http://alzlive.com/wp-content/themes/alz-live/images/icons/icon-calendar-plus_circle.png'></a>
+    </div>
+    <br><br>
+  </div>
+
+
+
+
+
+</div> <!-- End of controller -->

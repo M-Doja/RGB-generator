@@ -14,7 +14,7 @@
 
 		vm.registerUser = function() {
 				UserFactory.registerUser(vm.user).then(function() {
-					$state.go('Profile',{
+					$state.go('Dash',{
 				    id: vm.status._id
 				  });
 
@@ -25,7 +25,7 @@
 			console.log('hi');
 				UserFactory.logIn(vm.user).then(function() {
 				  console.log('hi world');
-				  $state.go('Profile', {
+				  $state.go('Dash', {
 				    id: vm.status._id
 				  });
 				});
