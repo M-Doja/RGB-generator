@@ -9,6 +9,10 @@
 		vm.title2 = 'Dashboard';
 		vm.status = UserFactory.status;
 		vm.user = {};
+		vm.logOut = function() {
+					UserFactory.logOut();
+					$state.go('Exit');
+				};
 
 
 	}

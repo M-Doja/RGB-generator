@@ -1,0 +1,33 @@
+<div ng-controller='ClockController as vm' style="text-align:center;margin:0 auto;padding:50px;">
+
+  <md-button class="md-default" style="width:200px;"ui-sref='EventHome'>Back</md-button><br><br>
+
+  <md-input-container>
+    <input type="number"ng-maxlength='3' ng-model='vm.setClock'placeholder="Enter Clock Minutes...">
+    <md-button ng-click='vm.setClockTimer()'>Set Clock</md-button>
+  </md-input-container>
+
+  <md-input-container>
+    <input type="number" ng-model='vm.setBreak' placeholder="Enter Break Minutes...">
+    <md-button ui-sref='EventHome'>Set Break</md-button>
+  </md-input-container>
+
+  <md-input-container>
+    <md-button ui-sref='vm.countdown()'>Start</md-button>
+    <md-button ui-sref='EventHome'>Stop</md-button>
+  </md-input-container>
+
+<h1>Time Remaining:</h1>
+<md-button ng-click='vm.delayedAlert()'>Show Time</md-button>
+
+<div id='display'style="background-color:white;height:160px;width:300px;margin:auto;font-size:3em;">
+  <div style="display:block;float:left;">
+    <a href=""><img height='40'style='margin-top:-10px;' src='http://tech.firstpost.com/wp-content/uploads/up-arrow-icon.png'/></a><br>
+    <a href=""><img height='40'style='margin-bottom:-90px;' src='http://www.traxroot.com/images/down-arrow-icon.png'/></a>
+  </div>
+  {{text | limitTo: 150}}
+  {{vm.setClock | limitTo: 3}} : 00
+</div>
+
+
+</div>

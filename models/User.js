@@ -8,7 +8,37 @@ var UserSchema = new mongoose.Schema({
   created: Date,
   deleted: Date,
   passwordHash: String,
-  salt: String
+  salt: String,
+  avatar: String,
+  color: String,
+  tagLine: String,
+  joined: Date,
+  bandName: String,
+  events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event'}],
+  instruments: [{
+    type: String,
+    player: String
+  }],
+  profileFBlink: String,
+  profileTWlink: String,
+  profileSClink: String,
+  profileYTlink: String,
+  setClock: Number,
+  setBreak: Number,
+  photo: [{
+    type: String,
+    caption: String
+  }],
+  video: [{
+    type: String,
+    name: String,
+    bandVid: String
+  }],
+  music: [{
+    type: String,
+    artist: String,
+    title: String,
+  }]
 });
 
 UserSchema.methods.setPassword = function(password) {
@@ -34,42 +64,15 @@ UserSchema.methods.createToken = function() {
 mongoose.model('User', UserSchema);
 
 // var UserSchema = new mongoose.Schema ({
-//   passwordHash: String,
-//   salt: String,
-//   email: {required: true, unique: true, type:String, lowercase: true, trim: true},
-//   username: String
-//   avatar: String,
-//   fName: String,
-//   lName: String,
-//   joined: Date,
-//   events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event'}],
+//
+//
 //   msgcount: Number,
 //   color: String,
 //   created: Date,
 //   tagLine: String,
 //   score: { type: Number, default: 0 },
-//   username: {required: true, unique: true, type: String, lowercase: true, trim: true},
-//   bandName: String,
-//   instruments: [{
-//     type: String,
-//     player: String
-//   }],
 //   friends: [{
 //     name: String
-//   }],
-//   photo: [{
-//     type: String,
-//     caption: String
-//   }],
-//   video: [{
-//     type: String,
-//     name: String,
-//     bandVid: String
-//   }],
-//   music: [{
-//     type: String,
-//     artist: String,
-//     title: String,
 //   }],
 //   inmessage: [{
 //     to: String,
@@ -84,9 +87,6 @@ mongoose.model('User', UserSchema);
 //     body: String,
 //     recieved: Date,
 //     recieverId: String,
-// }],
-//   profileFBlink: String,
-//   profileTWlink: String,
-//   profileGHlink: String,
-//   profileLKlink: String
+// }]
+//
 // });

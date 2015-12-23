@@ -10,6 +10,7 @@ var auth = jwt({
   userProperty: 'payload'
 });
 
+// LOOKING FOR 'ID'
 router.param('id', function(req,res,next,id){
   console.log(id);
 User.findOne({_id:id}, function(err,result){
@@ -20,6 +21,7 @@ User.findOne({_id:id}, function(err,result){
   });
 });
 
+// NEW USER REGISTRATION
 router.post('/register', function(req, res, next) {
   console.log('hi there');
   var user = new User(req.body);
@@ -33,6 +35,7 @@ router.post('/register', function(req, res, next) {
   });
 });
 
+// RETURNING USER LOGIN
 router.post('/login',  function(req, res, next) {
   console.log('log in please');
   passport.authenticate('local', function(err, result){
@@ -42,7 +45,21 @@ router.post('/login',  function(req, res, next) {
   })(req, res, next);
 });
 
-// save new Color
+// PHOTO UPLOAD
+router.put('/:id/pic', function(req, res, next) {
+  User.update({
+      _id: req.params.id
+    }, {
+      pic: req.body.url,
+    },
+    function(err, result) {
+      if (err) return next(err);
+      if (!result) return next("Could not create the object. Please check all fields.");
+      res.send(req.body.url);
+    });
+});
+
+// SAVE COLOR
 router.post('/', function(req, res, next) {
   var palette = new Palette(req.body);
   palette.color = req.payload.color;

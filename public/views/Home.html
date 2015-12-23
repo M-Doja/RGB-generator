@@ -1,9 +1,6 @@
  <div ng-controller="HomeController as nav">
 	<h1 style="text-align:center">{{vm.title}}</h1>
 
-
-
-
  <br>
  <div ng-show="nav.isLogin">
    <form class="well container" ng-submit="nav.loginUser()">
@@ -11,21 +8,22 @@
      <md-content  layout-gt-sm="row" layout-padding>
          <div>
            <md-input-container>
-             <input class="form-control"  placeholder="Username..." ng-model="nav.user.username">
+             <input class="form-control" placeholder="Username..." ng-model="nav.user.username">
            </md-input-container>
            <md-input-container>
              <input type="password" class="form-control"  placeholder="Password..." ng-model="nav.user.password">
            </md-input-container>
          </div>
-       </md-content>
 
     <md-input-container>
      <div style="text-align: center">
-       <md-button type="submit" class="btn btn-primary" >Login</md-button>
-       <md-button type='button' ng-click="nav.isLogin = false;" class="btn btn-info">Register</md-button><br><br>
+       <md-button type="submit" class=" md-primary" >Login</md-button>
+       <md-button type='button' ng-click="nav.isLogin = false;" class="md-default">Register</md-button><br><br>
    </md-input-container>
+ </md-content>
  </div>
  </form>
+ </div>
 
 
  <div ng-show="!nav.isLogin">
@@ -35,34 +33,27 @@
      <h1 style="text-align:center;color:red;">Registration</h1>
 
      <md-content layout-padding class="autoScroll">
-    <md-input-container class="md-icon-float">
-      <!-- Use floating label instead of placeholder -->
+      <md-input-container class="md-icon-float">
+        <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+        <input placeholder="Username..." ng-model="nav.user.username"  type="text">
+      </md-input-container><br>
 
-      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
-      <input placeholder="Username..." ng-model="nav.user.username"  type="text">
-    </md-input-container><br>
+      <md-input-container>
+        <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+        <input ng-model="nav.user.email" type="email" placeholder="Email " >
+      </md-input-container><br>
 
-    <md-input-container >
+     <md-input-container>
+       <input  type="password" placeholder="Password..." ng-model="nav.user.password" >
+     </md-input-container><br>
 
-      <!-- Use floating placeholder instead of label -->
-      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
-      <input ng-model="nav.user.email" type="email" placeholder="Email " >
-    </md-input-container><br>
-
-<md-input-container>
-
-     <input  type="password" placeholder="Password..." ng-model="nav.user.password" >
-   </md-input-container><br>
-
- <md-input-container>
-
-     <input type="password" placeholder="Confirm Password..." ng-model="nav.user.confirmPassword" >
-   </md-input-container><br><br><br>
-
-   <button type='button' ng-click="nav.isLogin = true;" class="btn btn-warning">exit</a>
- </md-content>
-
-
+     <md-input-container>
+       <input type="password" placeholder="Confirm Password..." ng-model="nav.user.confirmPassword" >
+     </md-input-container><br><br><br>
+    <md-input-container>
+       <md-button type='button' ng-click="nav.isLogin = true;" class="btn btn-warning">exit</md-button>
+     <md-input-container>
+   </md-content>
 
      <div ng-show="nav.user.password && nav.user.confirmPassword && !(nav.user.password === nav.user.confirmPassword)" style="color: red">Your passwords must match.</div>
 
@@ -71,15 +62,9 @@
        <button style='margin-left:15px' type="submit" class="btn btn-info">Join!</button>
      </div>
 
-
    </form>
  </div>
 
-
-
-
-
-
-<!-- </div> -->
+</div>
 
 </div> <!-- End of controller -->

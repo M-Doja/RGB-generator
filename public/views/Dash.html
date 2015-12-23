@@ -1,5 +1,8 @@
 <div ng-controller="DashController as vm">
  <h1 style="text-align:center">{{vm.status.username}}'s {{vm.title2}}</h1>
+ <md-input-container style="margin-left:25px;">
+   <md-button class="md-warn md-raised"ng-click='vm.logOut()'>Log Out</md-button>
+ </md-input-container>
  <div  style="text-align:center;margin-top:20px;"class="row">
     <div style="margin-bottom:15px;"class="col-md-4">
       <a ui-sref='Profile({id: vm.status._id})' style="width:300px;height:200px;"><h3>Profile</h3><img height='225' src='https://dhrm.utah.gov/wp-content/themes/dhrm/img/icon-employeebadge-white-large.png'></a>

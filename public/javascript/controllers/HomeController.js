@@ -30,11 +30,7 @@
 				  });
 				});
 			};
-			vm.logOut = function() {
-						UserFactory.logOut();
-						$state.go('Home');
-					};
-
+		
 
 
 
